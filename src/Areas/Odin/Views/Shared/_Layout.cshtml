@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Odin</title>
+    <link rel="stylesheet" href="~/_content/Odin/odin/css/site.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <li><a asp-controller="Home" asp-action="Index" >Table Index</a></li>
+        </nav>
+    </header>
+    @RenderBody()
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
