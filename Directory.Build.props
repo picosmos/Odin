@@ -1,0 +1,29 @@
+<Project>
+  <PropertyGroup>
+    <!-- Version Information -->
+    <MajorVersion>1</MajorVersion>
+    <MinorVersion>0</MinorVersion>
+    <PatchVersion>0</PatchVersion>
+    <VersionSuffix Condition="'$(Configuration)' == 'Debug'">dev</VersionSuffix>
+    
+    <!-- Computed Version -->
+    <Version Condition="'$(VersionSuffix)' == ''">$(MajorVersion).$(MinorVersion).$(PatchVersion)</Version>
+    <Version Condition="'$(VersionSuffix)' != ''">$(MajorVersion).$(MinorVersion).$(PatchVersion)-$(VersionSuffix)</Version>
+    
+    <!-- Build Configuration -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <WarningsNotAsErrors />
+    
+    <!-- Source Control -->
+    <RepositoryUrl>https://github.com/yourusername/odin</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    
+    <!-- Package Defaults -->
+    <Authors>Your Name</Authors>
+    <Company>Your Company</Company>
+    <Copyright>Copyright © $(Company) $([System.DateTime]::Now.Year)</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+</Project>

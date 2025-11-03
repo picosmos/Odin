@@ -4,7 +4,40 @@
     <OutputType>Library</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>Odin</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Tom Lambert (picosmos)</Authors>
+    <Company></Company>
+    <Description>Odin - A generic data service library for Entity Framework Core with web UI components</Description>
+    <PackageTags>entityframework;data;crud;web;ui</PackageTags>
+    <RepositoryUrl>https://github.com/picosmos/Odin</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    
+    <!-- Package Generation Settings -->
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSource>true</IncludeSource>
   </PropertyGroup>
+
+  <!-- Disable scoped CSS -->
+  <PropertyGroup>
+    <ScopedCssEnabled>false</ScopedCssEnabled>
+  </PropertyGroup>
+
+  <!-- Package Content Files -->
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="Areas\**\*.cshtml" Pack="true" PackagePath="contentFiles\any\net8.0\Areas\" buildAction="None" />
+    <None Include="wwwroot\**\*" Pack="true" PackagePath="contentFiles\any\net8.0\wwwroot\" buildAction="None" />
+  </ItemGroup>
+
+  <!-- Dependencies -->
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.8" />

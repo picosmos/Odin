@@ -13,7 +13,6 @@ public static class OdinRegistration
     {
         app.UseWhen(context => context.Request.Path.StartsWithSegments("/odin"), appBuilder =>
         {
-            appBuilder.UseMiddleware<Middleware.LoggingMiddleware>();
             appBuilder.UseMiddleware<Middleware.BasicAuthMiddleware>();
         });
     }

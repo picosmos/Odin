@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Message</h1>
+    <p>This is a demo application showing how to use the Odin library.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Odin Data Management</h5>
+                </div>
+                <div class="card-body">
+                    <p>Access the Odin admin interface to manage your data:</p>
+                    <a href="/Odin/Home" class="btn btn-primary">Open Odin Admin</a>
+                    <small class="form-text text-muted mt-2">
+                        Default credentials: admin / password
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Demo Data</h3>
+            <p>This app includes sample Users and Products tables for testing.</p>
+        </div>
+    </div>
+</div>
